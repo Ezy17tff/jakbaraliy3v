@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+body {
+  background: linear-gradient(to right, #0f2c29, #14201e);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* From Uiverse.io by cssbuttons-io */
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  margin-top: 20px;
+}
+
+button.learn-more {
+  width: 12rem;
+  height: auto;
+}
+
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #050505;
+  border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #d4af37;
+}
+
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #d4af37;
+  border-right: 0.125rem solid #d4af37;
+  transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #000000;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button:hover .circle {
+  width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+  background: #d4af37;
+  transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+  color: #d4af37;
+}
+
+main {
+  display: inline-block;
+  width: 1300px;
+  height: 700px;
+  position: relative;
+  top: 100px;
+}
+
+/* Flip Card stillari */
+.flip-card {
+  width: 100%;
+  height: 100%;
+  perspective: 1500px; /* Animatsiyani chuqurroq qilish uchun */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Silliq va elastik aylanish */
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: linear-gradient(to right, #1a3c34, #0a1f1b);
+  border: none; /* Border olib tashlandi */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #2a4d47, #1e2b29); /* Orqa yuz uchun yangi rang */
+}
+
+/* Image */
+.image {
+  position: absolute;
+  top: 165px;
+  right: 50px;
+  width: 400px;
+  height: 400px;
+}
+
+/* Orqa yuzdagi ko'z ikonkasi */
+.image-back {
+  width: 400px;
+  height: 400px;
+  margin-bottom: 20px;
+}
+
+/* Section */
+section {
+  text-align: left;
+  display: inline-block;
+}
+
+/* EZY matni */
+.ezy {
+  position: absolute;
+  top: 170px;
+  font-size: 170px;
+  left: 70px;
+  color: #d4af37;
+  filter: drop-shadow(0 0 15px #000000);
+}
+
+/* H2 va span */
+.h2 {
+  position: absolute;
+  top: 360px;
+  left: 70px;
+  font-size: 30px;
+  color: #ffffff;
+  filter: drop-shadow(0 0 10px black);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-transform: capitalize;
+}
+
+.span {
+  position: absolute;
+  left: 0px;
+  top: 55px;
+  color: #d4af37;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 55px;
+}
+
+/* Ijtimoiy tarmoqlar ikonkalari */
+.main-section__social-networks a {
+  font-size: 60px;
+  margin-right: 15px;
+  color: #000000;
+  transition: 0.3s;
+  letter-spacing: 30px;
+  filter: drop-shadow(0 0 10px #d4af37);
+}
+
+.main-section__social-networks a:hover {
+  color: #d4af37;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 90vw;
+    height: 60vh;
+  }
+
+  button.learn-more {
+    width: 8rem;
+  }
+
+  button.learn-more .circle {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .ezy {
+    font-size: 12vw;
+    top: 15%;
+  }
+
+  .h2 {
+    font-size: 3vw;
+    top: 35%;
+  }
+
+  .span {
+    font-size: 4vw;
+    top: 100%;
+  }
+
+  .image {
+    width: 35%;
+    top: 15%;
+    right: 5%;
+  }
+
+  .image-back {
+    width: 35%;
+  }
+
+  .main-section__social-networks a {
+    font-size: 6vw;
+    margin: 0 10px;
+  }
+}
+
+/* Telefonlar uchun (480px dan kichik ekranlar) */
+@media (max-width: 480px) {
+  main {
+    width: 95vw;
+    height: 50vh;
+    top: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  button.learn-more {
+    width: 7rem;
+  }
+
+  button.learn-more .circle {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .ezy {
+    font-size: 15vw;
+    top: 10%;
+    left: 5%;
+  }
+
+  .h2 {
+    font-size: 4vw;
+    top: 30%;
+    left: 5%;
+  }
+
+  .span {
+    font-size: 5vw;
+    top: 90%;
+  }
+
+  .image {
+    width: 40%;
+    top: 10%;
+    right: 5%;
+  }
+
+  .image-back {
+    width: 40%;
+  }
+
+  .main-section__social-networks a {
+    font-size: 8vw;
+    margin: 0 8px;
+  }
+}
